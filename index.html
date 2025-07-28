@@ -1,0 +1,963 @@
+<!-- This is an HTML document. Please open this file directly in a web browser (e.g., Chrome, Firefox, Edge) to view the portfolio. Do not attempt to run it as a JavaScript file. -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Paris - Web Development Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Charles Paris is a professional web developer specializing in custom web applications, UI/UX design, and innovative digital tools. Explore my portfolio of projects including music production apps, utility tools, and interactive guides.">
+    <meta name="keywords" content="Charles Paris, web developer, web development, custom web apps, UI/UX design, front-end development, JavaScript, React, HTML, CSS, music tech, producer tools, Akai MPC, SP-404, Yamaha SeqTrak, Drum App, Metronome, Chord Explorer, Sample Organizer, Aetherflow App, CPU Knife, Quote Maker, Brother OTG, Over Time Grind, 365charlesparis, portfolio, freelance web developer">
+    <meta name="author" content="Charles Paris">
+
+    <!-- Open Graph / Social Media Sharing Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Charles Paris - Web Development Portfolio">
+    <meta property="og:description" content="Charles Paris is a professional web developer specializing in custom web applications, UI/UX design, and innovative digital tools. Explore my portfolio of projects.">
+    <meta property="og:url" content="https://www.yourportfolio.com/"> <!-- IMPORTANT: Replace with your actual portfolio URL when published -->
+    <meta property="og:image" content="https://placehold.co/1200x630/2a2a2a/ffffff?text=Charles+Paris+Portfolio"> <!-- Placeholder, consider a custom screenshot of your portfolio -->
+    <meta property="og:image:alt" content="Charles Paris Web Development Portfolio">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@365CharlesParis">
+    <meta name="twitter:creator" content="@365CharlesParis">
+    <meta name="twitter:title" content="Charles Paris - Web Development Portfolio">
+    <meta name="twitter:description" content="Explore the web development portfolio of Charles Paris, featuring custom apps and digital solutions.">
+    <meta name="twitter:image" content="https://placehold.co/1200x675/2a2a2a/ffffff?text=Charles+Paris+Portfolio"> <!-- Placeholder, consider a custom screenshot of your portfolio -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a202c 0%, #0a0a0a 100%); /* Dark professional gradient */
+            color: #e2e8f0; /* Light gray text */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* General section padding */
+        section {
+            padding: 80px 0;
+        }
+
+        /* Heading styles */
+        .section-heading {
+            font-size: 2.8rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #00bcd4; /* Teal accent */
+            border-radius: 2px;
+        }
+
+        /* Button styles */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background-color: #00bcd4; /* Teal */
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #00a0b2; /* Darker teal */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background-color: #4a5568; /* Gray-700 */
+            color: #ffffff;
+            font-weight: 500;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2d3748; /* Gray-800 */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            background-color: #2d3748; /* Dark gray */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensure cards are same height */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card-content {
+            padding: 2rem;
+            flex-grow: 1; /* Allows content to push footer to bottom */
+            display: flex;
+            flex-direction: column; /* Arrange content vertically */
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem; /* text-2xl */
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            /* Added for better text wrapping in titles */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .project-card p {
+            color: #cbd5e0; /* Light gray */
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Allows description to take available space */
+        }
+
+        .project-card .typical-cost {
+            font-size: 0.95rem; /* Slightly larger for emphasis */
+            color: #00bcd4; /* Teal for price */
+            font-weight: 600;
+            margin-top: 0.5rem; /* Space above cost */
+            margin-bottom: 1rem; /* Space below cost */
+        }
+
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto; /* Pushes tech stack to bottom of content area */
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card .tech-stack span {
+            background-color: #4a5568; /* Gray-700 */
+            color: #a0aec0; /* Light blue-gray */
+            padding: 6px 12px;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-card-actions {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            padding: 0 2rem 2rem; /* Padding for buttons at the bottom */
+            margin-top: auto; /* Pushes buttons to the very bottom of the card */
+        }
+
+        /* Contact Form Styles */
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #2d3748; /* Dark gray */
+            border: 1px solid #4a5568; /* Gray-700 */
+            color: #e2e8f0;
+            padding: 12px 16px;
+            border-radius: 0.375rem;
+            width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #00bcd4; /* Teal */
+            box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.3);
+        }
+
+        .contact-form label {
+            color: #cbd5e0;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 py-6 shadow-lg fixed w-full z-40">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#hero" class="text-white text-2xl font-extrabold tracking-wide">Charles Paris <span class="text-teal-400">Dev</span></a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#about" class="text-gray-300 hover:text-teal-400 transition duration-300 font-medium">About</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-teal-400 transition duration-300 font-medium">Services</a></li>
+                    <li><a href="#skills" class="text-gray-300 hover:text-teal-400 transition duration-300 font-medium">Skills</a></li>
+                    <li><a href="#portfolio" class="text-gray-300 hover:text-teal-400 transition duration-300 font-medium">Portfolio</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-teal-400 transition duration-300 font-medium">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-gradient-to-br from-gray-900 to-blue-950 text-white flex items-center justify-center min-h-screen py-20">
+            <div class="container mx-auto text-center px-4 z-10">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate__animated animate__fadeInDown">
+                    Building <span class="text-teal-400">Innovative Web Solutions</span> for Your Vision
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 animate__animated animate__fadeInUp animate__delay-1s">
+                    Transforming ideas into powerful, user-friendly web applications and digital experiences.
+                </p>
+                <a href="#portfolio" class="btn-primary animate__animated animate__zoomIn animate__delay-2s">
+                    View My Work <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+            <!-- Optional: Subtle background pattern or particles for modern look -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-gray-800 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">About Charles Paris</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="https://github.com/365otg/365CP/blob/main/Charles_Paris_bio.jpg?raw=true" alt="Charles A. Paris - Web Developer" class="rounded-full w-64 h-64 object-cover mx-auto border-4 border-teal-500 shadow-lg" loading="lazy">
+                    </div>
+                    <div class="md:w-2/3 text-lg text-gray-300">
+                        <p class="mb-4">
+                            Hello! I'm Charles A. Paris, also known as Brother OTG, a dedicated **Web Developer, Music Producer, and Author**. With a unique blend of creative and technical expertise, I specialize in crafting robust, intuitive, and high-performance web applications that solve real-world problems.
+                        </p>
+                        <p class="mb-4">
+                            My journey began in music production, where I developed a deep understanding of user needs and workflow optimization through creating tools like the Akai MPC Guide and various producer utilities. This background fuels my passion for building applications that are not just functional, but genuinely enhance the user experience.
+                        </p>
+                        <p>
+                            I am committed to delivering exceptional digital solutions, from custom web applications and e-commerce platforms to interactive guides and utility tools. Let's build something impactful together.
+                        </p>
+                        <a href="#contact" class="btn-primary mt-8">
+                            Let's Connect <i class="fas fa-envelope ml-3"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-gray-900 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">My Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300">
+                        <i class="fas fa-laptop-code text-5xl text-teal-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Custom Web Application Development</h3>
+                        <p class="text-gray-300">
+                            Bringing your unique ideas to life with bespoke web applications tailored to your specific needs, from complex platforms to specialized tools.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 mt-4">
+                            <li>User Authentication & Dashboards</li>
+                            <li>Database Integration</li>
+                            <li>Custom API Development</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300">
+                        <i class="fas fa-shopping-cart text-5xl text-teal-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-4">E-commerce Solutions</h3>
+                        <p class="text-gray-300">
+                            Building secure and scalable online stores that drive sales, from product showcases to full payment gateway integrations.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 mt-4">
+                            <li>Product Management Systems</li>
+                            <li>Secure Payment Gateways</li>
+                            <li>Inventory Management</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300">
+                        <i class="fas fa-palette text-5xl text-teal-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-4">UI/UX Design & Prototyping</h3>
+                        <p class="text-gray-300">
+                            Crafting intuitive, engaging, and visually appealing user interfaces and experiences that delight your audience.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 mt-4">
+                            <li>User Research & Wireframing</li>
+                            <li>Interactive Prototypes</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300">
+                        <i class="fas fa-tools text-5xl text-teal-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Website Maintenance & Support</h3>
+                        <p class="text-gray-300">
+                            Ensuring your web presence remains secure, up-to-date, and performs optimally with ongoing support and maintenance.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 mt-4">
+                            <li>Security Updates & Backups</li>
+                            <li>Performance Optimization</li>
+                            <li>Bug Fixes & Feature Enhancements</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300">
+                        <i class="fas fa-book-open text-5xl text-teal-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Interactive Guides & Educational Platforms</h3>
+                        <p class="text-gray-300">
+                            Developing engaging web-based guides, tutorials, and e-learning platforms for specialized knowledge dissemination.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 mt-4">
+                            <li>Interactive Content Delivery</li>
+                            <li>Progress Tracking</li>
+                            <li>Resource Management</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-xl border border-gray-700 hover:border-teal-500 transition-all duration-300">
+                        <i class="fas fa-cogs text-5xl text-teal-400 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-4">API Integration & Development</h3>
+                        <p class="text-gray-300">
+                            Connecting your applications with third-party services or building custom APIs to extend functionality and data exchange.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 mt-4">
+                            <li>Third-Party API Integration</li>
+                            <li>Custom RESTful APIs</li>
+                            <li>Data Synchronization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-gray-800 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">My Skills & Tech Stack</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-white mb-3">Languages</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>JavaScript (ES6+)</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>Python (for backend/scripting)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-white mb-3">Frameworks & Libraries</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>React.js</li>
+                            <li>Tailwind CSS</li>
+                            <li>Node.js (Basic)</li>
+                            <li>Express.js (Basic)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-white mb-3">Databases & Backend</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>Firebase (Firestore, Auth)</li>
+                            <li>RESTful APIs</li>
+                            <li>Basic SQL Concepts</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-white mb-3">Tools & Platforms</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Netlify / Vercel (Deployment)</li>
+                            <li>Google Cloud Platform (Basic)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-white mb-3">Design & UX</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>Responsive Design</li>
+                            <li>User Interface (UI) Principles</li>
+                            <li>User Experience (UX) Principles</li>
+                            <li>Figma (Basic)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-white mb-3">Concepts & Methodologies</h3>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>API Integration</li>
+                            <li>Problem Solving</li>
+                            <li>Performance Optimization</li>
+                            <li>Version Control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="bg-gray-900 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="section-heading">My Portfolio</h2>
+                <p class="text-center text-lg text-gray-300 mb-12 max-w-3xl mx-auto">
+                    Here are some of the applications I've built, demonstrating my ability to create functional, user-centric tools and guides.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Project 1: Charles Paris Producer Tools (Main Hub) -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Charles Paris Producer Tools (Main Hub)</h3>
+                            <p>
+                                A central hub aggregating various web-based tools designed to assist music producers in their workflow. This project demonstrates strong organizational skills and the ability to create a cohesive user experience across multiple applications.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $12,000 - $25,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/CPU/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                            <!-- Add GitHub link if available -->
+                            <!-- <a href="YOUR_GITHUB_REPO_LINK" target="_blank" class="btn-secondary">
+                                GitHub <i class="fab fa-github ml-2"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Charles Paris Producer Tools (Audio/Image/Creative) -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Producer Tools <br class="md:hidden lg:inline"> (Audio/Image/Creative)</h3>
+                            <p>
+                                A suite of web-based tools for audio and image manipulation, tailored for creative professionals. Showcases proficiency in handling media assets.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $25,000 - $50,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>File API</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/ProducerTools/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Charles Paris Akai MPC Guide -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Akai MPC Guide</h3>
+                            <p>
+                                An interactive guide for Akai MPC users, providing clear instructions and resources. Demonstrates expertise in creating structured, educational web content and intuitive navigation.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Content Management</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/AkaiMPCGuide/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Charles Paris Yamaha SeqTrak Guide -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Yamaha SeqTrak Guide</h3>
+                            <p>
+                                A comprehensive online guide for the Yamaha SeqTrak, designed for easy learning and reference. Highlights the ability to present complex information in an accessible web format.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/seqtrak/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Charles Paris SP-404 MK2 Guide -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>SP-404 MK2 Guide</h3>
+                            <p>
+                                An interactive resource for Roland SP-404 MK2 users, simplifying complex features and workflows. Showcases strong UI/UX for specialized hardware guides.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>User Guides</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/sp404-mk2-guide/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Charles Paris Roland Verselab MV-1 Guide -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Roland Verselab MV-1 Guide</h3>
+                            <p>
+                                A dedicated web guide for the Roland Verselab MV-1, offering clear instructions and tips. Demonstrates the creation of detailed, user-friendly documentation online.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Educational Content</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/RolandVerselabMV1/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Charles Paris Drum App -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Drum App</h3>
+                            <p>
+                                A web-based drum machine for practicing rhythms and beat-making. Highlights interactive audio elements and real-time user input processing.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $18,000 - $35,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Audio API</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/drumapp/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: Charles Paris Akai Force App -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Akai Force App</h3>
+                            <p>
+                                An application designed to enhance the Akai Force workflow. Demonstrates understanding of specific hardware integration concepts and user utility.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $15,000 - $28,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Utility Tool</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/akaiforceapp/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: Charles Paris Aetherflow App -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Aetherflow App</h3>
+                            <p>
+                                A creative web application for generating unique visual or audio patterns. Showcases innovative design and complex JavaScript logic for dynamic content generation.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $40,000 - $80,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Generative Art/Audio</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/aetherflow-app/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 10: Charles Paris Quote Maker -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Quote Maker</h3>
+                            <p>
+                                A simple tool for generating and customizing quotes for various purposes. Highlights text manipulation, UI controls, and content generation.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $7,000 - $12,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Text Utility</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/OTGQuotes/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 11: Charles Paris CPU Knife -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>CPU Knife</h3>
+                            <p>
+                                A utility application designed to help users manage or understand CPU-related processes. Demonstrates system interaction concepts within a web environment.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $7,000 - $12,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>System Utility</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/CPUKnife/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 12: Charles Paris Metronome -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Metronome</h3>
+                            <p>
+                                A precise web-based metronome tool for musicians. Showcases timing accuracy, audio feedback, and simple, effective UI design.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Audio API</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/metronome/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 13: Charles Paris Chord Explorer -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Chord Explorer</h3>
+                            <p>
+                                An interactive tool for exploring musical chords and their structures. Demonstrates data visualization, user input interpretation, and educational utility.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $15,000 - $30,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Music Theory</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/ChordExplorer/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 14: Charles Paris Sample Organizer -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Sample Organizer</h3>
+                            <p>
+                                A web application designed to help producers manage and categorize their audio samples. Highlights data organization, search functionality, and file management concepts.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $30,000 - $55,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Data Management</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/SampleOrganizer/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 15: Charles Paris Producer Tutorials (Main Hub) -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Producer Tutorials (Main Hub)</h3>
+                            <p>
+                                A comprehensive portal for video tutorials on music production techniques and software. Showcases content aggregation, video embedding, and educational platform design.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $12,000 - $25,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Video Embedding</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/producertutorials/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 16: Charles Paris Links Hub -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Charles Paris Links Hub</h3>
+                            <p>
+                                A comprehensive digital hub consolidating all online presence and resources for Charles Paris. Demonstrates effective information architecture and user navigation for a personal brand.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $3,000 - $7,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/CharlesParisLinks/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 17: Charles Paris Music Site -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Charles Paris Music Site</h3>
+                            <p>
+                                A dedicated website showcasing Charles Paris's music, discography, and artistic endeavors. Highlights professional online presence for artists and content creators.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $5,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Content Presentation</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/CharlesParisMusic/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 18: 365CP - Personal Bio & Brand Site -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>365CP - Personal Bio & Brand Site</h3>
+                            <p>
+                                A personal brand and bio website for Charles Paris (Brother OTG), detailing his multi-faceted career as a producer, developer, and author. Focuses on personal branding and content presentation.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $5,000 - $12,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Personal Branding</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/365CP/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Project 19: History -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>History</h3>
+                            <p>
+                                A web application designed to present historical information or personal timelines in an engaging and accessible format.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Content Presentation</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/History/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Project 20: RC-202 Guide -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>RC-202 Guide</h3>
+                            <p>
+                                An interactive guide for the Roland RC-202 Loop Station, offering clear instructions and creative tips for musicians.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $8,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>User Guides</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/RC202/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Project 21: Video Converter -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Video Converter</h3>
+                            <p>
+                                A web-based utility for converting video formats, demonstrating proficiency in handling media processing within a browser environment.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $25,000 - $50,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>File API</span><span>Media Processing</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/VideoConverter/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Project 22: AAE (Advanced Audio Editor) -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>AAE (Advanced Audio Editor)</h3>
+                            <p>
+                                An advanced web-based audio editing tool with new features, showcasing sophisticated audio manipulation and a user-friendly interface.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $35,000 - $75,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Audio API</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/AAE/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Project 23: Continuum -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Continuum</h3>
+                            <p>
+                                A creative web application exploring continuous visual or interactive experiences, demonstrating innovative design and dynamic content generation.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $30,000 - $60,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Interactive Design</span><span>Generative Content</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/Continuum/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Project 24: WebDev - Web Development Services -->
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>WebDev - Web Development Services</h3>
+                            <p>
+                                A dedicated web presence showcasing comprehensive web development services, from custom applications to responsive website design. This project serves as a direct portfolio piece for potential clients.
+                            </p>
+                            <p class="typical-cost">Typical Cost: $5,000 - $15,000</p>
+                            <div class="tech-stack">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>Portfolio</span>
+                            </div>
+                        </div>
+                        <div class="project-card-actions">
+                            <a href="https://365otg.github.io/WebDev/" target="_blank" class="btn-primary">
+                                Live Demo <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gray-800 py-20">
+            <div class="container mx-auto px-4 max-w-2xl">
+                <h2 class="section-heading">Get In Touch</h2>
+                <p class="text-center text-lg text-gray-300 mb-10">
+                    Ready to start your next web project? Fill out the form below or use the client portal to get a detailed proposal.
+                </p>
+                <form class="contact-form space-y-6" id="contactForm">
+                    <div>
+                        <label for="name" class="block">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div>
+                        <label for="message" class="block">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary">
+                            Send Message <i class="fas fa-paper-plane ml-3"></i>
+                        </button>
+                    </div>
+                </form>
+                <p class="text-center text-gray-400 mt-8">
+                    Alternatively, use my dedicated <a href="YOUR_CLIENT_PORTAL_APP_URL" target="_blank" class="text-teal-400 hover:underline">Client Portal</a> for project inquiries and proposals.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-10 text-center text-gray-500 text-sm">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Charles Paris Web Development. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="http://instagram.com/365charlesparis" target="_blank" class="text-gray-400 hover:text-pink-600 transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://www.youtube.com/@365charlesparis/releases" target="_blank" class="text-gray-400 hover:text-red-600 transition-colors duration-300"><i class="fab fa-youtube text-xl"></i></a>
+                <a href="http://x.com/365charlesparis" target="_blank" class="text-gray-400 hover:text-gray-300 transition-colors duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="http://tiktok.com/@365otg" target="_blank" class="text-gray-400 hover:text-black transition-colors duration-300"><i class="fab fa-tiktok text-xl"></i></a>
+                <a href="https://www.reddit.com/user/supplythework/" target="_blank" class="text-gray-400 hover:text-orange-600 transition-colors duration-300"><i class="fab fa-reddit text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Construct the mailto link
+            const mailtoLink = `mailto:365otg@gmail.com?subject=${encodeURIComponent(subject || 'Inquiry from your Portfolio Website')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+
+            // Open the user's default email client
+            window.location.href = mailtoLink;
+
+            // Optionally, clear the form after submission attempt
+            this.reset();
+        });
+    </script>
+</body>
+</html>
